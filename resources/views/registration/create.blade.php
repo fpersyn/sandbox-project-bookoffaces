@@ -7,10 +7,10 @@
 
         {{ csrf_field() }}
 
-        <!-- Username Form Input -->
+        <!-- Name Form Input -->
         <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" class="form-control" value="{{ old('username') }}">
+            <label for="name">Username:</label>
+            <input type="text" name="name" id="name" class="form-control" value="{{ old('username') }}">
         </div>
 
         <!-- Email Form Input -->

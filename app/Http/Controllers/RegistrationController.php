@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\User;
 use App\Http\Requests;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegistrationController extends Controller
 {
@@ -29,9 +30,16 @@ class RegistrationController extends Controller
         return view('registration.create');
     }
 
-    public function store()
+    /**
+     * Create a Friendbook user.
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function store(Request $request)
     {
-//        return 'creating new user';
+        $user = User::create($request->all());
+
+        Auth::login($user);
 
         return redirect('welcome');
     }
