@@ -25,4 +25,6 @@
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', 'PagesController@home');
+    Route::get('/welcome', 'PagesController@welcome');
+    Route::resource('register', 'RegistrationController');
 });
